@@ -1,0 +1,49 @@
+service: vision
+frameworkVersion: "4.1.18"
+
+provider:
+  name: aws
+  runtime: python3.9
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - rekognition:DetectFaces
+            - rekognition:DetectLabels
+            - bedrock:InvokeModel
+            - s3:GetObject
+          Resource: "*"
+
+functions:
+  health:
+    handler: handler.health
+    events:
+      - httpApi:
+          path: /
+          method: get
+  v1Description:
+    handler: handler.v1_description
+    events:
+      - httpApi:
+          path: /v1
+          method: get
+  v2Description:
+    handler: handler.v2_description
+    events:
+      - httpApi:
+          path: /v2
+          method: get
+  analyzeEmotion:
+    handler: handler.v1_analyze
+    events:
+      - httpApi:
+          path: /v1/vision
+          method: post
+  analyzeEmotionV2:
+    handler: handler.v2_analyze
+    timeout: 30
+    events:
+      - httpApi:
+          path: /v2/vision
+          method: post
