@@ -110,6 +110,8 @@ Os usuários interagem com a aplicação por meio de endpoints da API, podendo e
 
 - Rota v1/vision
 
+![medo](./assets/medo.jpg)
+
 ```bash
 {
    "url_to_image": "https://imagens-sprint-8.s3.amazonaws.com/medo.jpg",
@@ -130,6 +132,8 @@ Os usuários interagem com a aplicação por meio de endpoints da API, podendo e
 ```
 
 - Rota v2/vision
+
+![menina-e-labrador](./assets/menina-e-labrador.jpg)
 
 ```bash
 {
@@ -187,12 +191,12 @@ As seguintes imagens estão no Bucket "imagens-sprint-8"
 
 #### imagens para a rota v2/vision
 
-- Labrador.jpg
+- labrador.jpg
 - bordercollie.jpg
 - siames.jpg
 - peixepalhaco.jpg
 - tucano.jpg
-- snoopdogg-e-boxer.jpg
+- snoop.jpg
 - menina-e-labrador.jpg
 
 ## 🏗️ Arquitetura do Projeto
